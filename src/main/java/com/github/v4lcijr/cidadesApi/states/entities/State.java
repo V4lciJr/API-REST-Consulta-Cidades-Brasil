@@ -34,8 +34,8 @@ public class State {
 
     private Integer ibge;
 
-    @Column(name = "pais")
-    private Integer countryId;
+//    @Column(name = "pais")
+//    private Integer countryId;
 
     @Type(type = "jsonb")
     @Basic(fetch = FetchType.LAZY)
