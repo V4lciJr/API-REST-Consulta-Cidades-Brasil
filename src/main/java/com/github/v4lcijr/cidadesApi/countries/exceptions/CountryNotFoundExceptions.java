@@ -1,4 +1,4 @@
-package com.github.v4lcijr.cidadesApi.exceptions;
+package com.github.v4lcijr.cidadesApi.countries.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

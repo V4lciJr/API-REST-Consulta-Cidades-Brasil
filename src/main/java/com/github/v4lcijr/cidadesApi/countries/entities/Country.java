@@ -1,5 +1,6 @@
-package com.github.v4lcijr.cidadesApi.countries;
+package com.github.v4lcijr.cidadesApi.countries.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import javax.persistence.Column;
@@ -8,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Getter
+@AllArgsConstructor
 @Entity
 @Table(name = "pais")
 public class Country {

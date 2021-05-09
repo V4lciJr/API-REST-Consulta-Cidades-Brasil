@@ -1,8 +1,8 @@
-package com.github.v4lcijr.cidadesApi;
+package com.github.v4lcijr.cidadesApi.countries.resource;
 
-import com.github.v4lcijr.cidadesApi.countries.Country;
-import com.github.v4lcijr.cidadesApi.exceptions.CountryNotFoundExceptions;
-import com.github.v4lcijr.cidadesApi.repository.CountryRepository;
+import com.github.v4lcijr.cidadesApi.countries.entities.Country;
+import com.github.v4lcijr.cidadesApi.countries.exceptions.CountryNotFoundExceptions;
+import com.github.v4lcijr.cidadesApi.countries.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
