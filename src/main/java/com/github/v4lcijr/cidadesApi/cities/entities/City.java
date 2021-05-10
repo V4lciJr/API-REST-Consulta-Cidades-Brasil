@@ -1,5 +1,7 @@
 package com.github.v4lcijr.cidadesApi.cities.entities;
 
+import com.github.v4lcijr.cidadesApi.states.entities.State;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.hibernate.annotations.Type;
@@ -7,22 +9,20 @@ import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
 import org.springframework.data.geo.Point;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @AllArgsConstructor
 @Entity(name = "Cities")
 @Table(name = "cidade")
 @TypeDefs(value = {
-        @TypeDef(name = "point", typeClass = PointType.class)
+        @TypeDef(name = "point", typeClass = PointType.class),
+        @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 })
 public class City {
 
     @Id
-    private Long id;
+    private final Long id;
 
     @Column(name = "nome")
     private String name;
@@ -33,6 +33,10 @@ public class City {
 
     @Column(name = "lat_lon")
     private String geolocation;
+
+    @ManyToOne
+    @JoinColumn(name = "estado", columnDefinition = "jsonb")
+    private State state;
 
     @Type(type = "point")
     @Column(name = "lat_lon", updatable = false, insertable = false)
